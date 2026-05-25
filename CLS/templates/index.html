@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Sistema de Gestión de Imágenes</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #1d2671, #c33764);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.12);
+            padding: 40px;
+            border-radius: 20px;
+            width: 420px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        h1 {
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: #e6e6e6;
+            margin-bottom: 30px;
+        }
+
+        input[type="file"] {
+            background: white;
+            color: #333;
+            padding: 12px;
+            border-radius: 10px;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        button {
+            background: #00c6ff;
+            color: white;
+            border: none;
+            padding: 14px 25px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+        }
+
+        button:hover {
+            background: #0072ff;
+        }
+
+        a {
+            display: block;
+            margin-top: 20px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .icon {
+            font-size: 50px;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="icon">🖼️</div>
+
+        <h1>Sistema de Gestión de Imágenes</h1>
+
+        <p>Sube y almacena imágenes de manera sencilla dentro del sistema.</p>
+
+        <form action="/upload" method="POST" enctype="multipart/form-data">
+            <input type="file" name="image" accept="image/*" required>
+            <button type="submit">Subir imagen</button>
+        </form>
+
+        <a href="/images">Ver imágenes guardadas</a>
+    </div>
+
+</body>
+</html>
