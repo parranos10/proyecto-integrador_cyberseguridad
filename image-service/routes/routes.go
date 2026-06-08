@@ -9,8 +9,7 @@ import (
 func SetupRoutes() {
 
 	http.HandleFunc("/", handlers.Home)
-
-	http.HandleFunc("/upload", handlers.UploadImage)
-
+	http.HandleFunc("/upload", handlers.Upload)
 	http.HandleFunc("/images", handlers.GetImages)
+	http.HandleFunc("/images/view", handlers.GetImage)
 }

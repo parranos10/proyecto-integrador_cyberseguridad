@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  # Servicio de Python (FastAPI)
+  auth_api:
+    build: ./auth-service       # Docker entra a la carpeta de Python y busca su Dockerfile
+    container_name: auth_fastapi_container
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./auth-service:/app     # Mantiene la persistencia de usuarios.db dentro de su carpeta
+    restart: always
+
+  # Servicio de Go (Imágenes)
+  image_service:
+    build: ./image-service      # Docker entra a la carpeta de Go y busca su Dockerfile
+    container_name: image_go_container
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./image-service/uploads:/app/uploads  # Guarda las imágenes dentro de su respectiva carpeta
+    restart: always
